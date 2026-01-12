@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- SCREEN: Sign Up -->
+<section>
+    <!-- Top Header -->
+    <div class="bg-black text-white py-3">
+        <div class="container mx-auto flex justify-center lg:justify-end px-4 sm:px-0">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-12 lg:space-x-[231px]">
+                <div class="flex items-center gap-2">
+                    <p class="text-sm font-normal leading-[21px]">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+                    <a href="#" class="text-sm font-semibold leading-6 border-b border-white hover:text-red-300 hover:border-red-300">ShopNow</a>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="text-sm font-normal leading-[21px]">English</span>
+                    <!-- Dropdown Icon -->
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="py-8 border-b border-gray-200">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-black mb-4 md:mb-0">Exclusive</a>
+
+            <!-- Navigation -->
+            <nav class="flex space-x-8 lg:space-x-12 text-black mb-4 md:mb-0">
+                <a href="#" class="text-base font-normal hover:text-red-500">Home</a>
+                <a href="#" class="text-base font-normal hover:text-red-500">Contact</a>
+                <a href="#" class="text-base font-normal hover:text-red-500">About</a>
+                <a href="#" class="text-base font-normal border-b border-black hover:text-red-500 hover:border-red-500">Sign Up</a>
+            </nav>
+
+            <!-- Search and Icons -->
+            <div class="flex items-center space-x-6">
+                <!-- Search Component -->
+                <div class="bg-gray-100 rounded-md py-2 px-4 flex items-center gap-4">
+                    <input type="text" placeholder="What are you looking for?" class="bg-transparent text-sm font-normal text-gray-800 placeholder-gray-500 focus:outline-none w-[153px]">
+                    <!-- Search Icon -->
+                    <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+
+                <!-- Icons -->
+                <div class="flex space-x-4">
+                    <!-- Wishlist Icon -->
+                    <a href="#" class="relative">
+                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </a>
+                    <!-- Cart Icon -->
+                    <a href="#" class="relative">
+                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2-2m-1 2H5.4m-1 0L5.4 5m-1 8L5.4 5m-1 8h-1l-2 2-2 2-2 2-2 2-2 2h-1"></path><circle cx="12" cy="19" r="1"></circle><circle cx="17" cy="19" r="1"></circle></svg>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-xs flex items-center justify-center w-4 h-4">2</span>
+                    </a>
+                    <!-- User Icon -->
+                    <a href="#" class="relative">
+                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sign Up Main Content -->
+    <main class="container mx-auto my-16 flex flex-col lg:flex-row items-center lg:space-x-[129px] px-4">
+        <!-- Side Image -->
+        <div class="w-full lg:w-[805px] h-[781px] bg-[#CBE4E8] flex-shrink-0 flex items-center justify-center rounded-r-lg lg:rounded-lg overflow-hidden mb-8 lg:mb-0">
+            <img src="https://placehold.co/919x706?text=Sign+Up+Visual" alt="Sign Up Visual" class="w-full h-full object-cover object-left-top">
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="w-full max-w-md lg:w-[371px] flex flex-col">
+            <div class="mb-12">
+                <h2 class="text-4xl font-medium leading-[30px] text-black mb-6">Create an account</h2>
+                <p class="text-base font-normal text-black">Enter your details below</p>
+            </div>
+
+            <form class="flex flex-col gap-10">
+                <!-- Name Input -->
+                <div class="flex flex-col gap-2">
+                    <label for="name" class="text-base text-black">Name</label>
+                    <input type="text" id="name" class="border-b border-gray-400 py-2 focus:outline-none focus:border-black placeholder-gray-500 text-black" placeholder="John Doe">
+                </div>
+
+                <!-- Email or Phone Number Input -->
+                <div class="flex flex-col gap-2">
+                    <label for="email_phone" class="text-base text-black">Email or Phone Number</label>
+                    <input type="text" id="email_phone" class="border-b border-gray-400 py-2 focus:outline-none focus:border-black placeholder-gray-500 text-black" placeholder="example@email.com or +1234567890">
+                </div>
+
+                <!-- Password Input -->
+                <div class="flex flex-col gap-2">
+                    <label for="password" class="text-base text-black">Password</label>
+                    <input type="password" id="password" class="border-b border-gray-400 py-2 focus:outline-none focus:border-black placeholder-gray-500 text-black" placeholder="********">
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col gap-4 mt-4">
+                    <button type="submit" class="bg-red-500 text-white py-4 rounded text-base font-medium text-center hover:bg-red-600 transition-colors">Create Account</button>
+                    <button type="button" class="border border-gray-400 py-4 rounded flex items-center justify-center gap-4 text-black hover:bg-gray-50 transition-colors">
+                        <img src="https://placehold.co/24x24?text=G" alt="Google Icon" class="w-6 h-6">
+                        <span class="text-base font-normal">Sign up with Google</span>
+                    </button>
+                </div>
+
+                <!-- Already have account? -->
+                <div class="flex justify-center items-center gap-4 mt-4">
+                    <p class="text-base font-normal text-black">Already have account?</p>
+                    <a href="#" class="text-base font-medium text-black border-b border-black hover:text-red-500 hover:border-red-500">Log in</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-20 pb-8 mt-16 px-4">
+        <div class="container mx-auto flex flex-wrap justify-between gap-y-10 lg:gap-x-24">
+            <!-- Exclusive Section -->
+            <div class="flex flex-col gap-6 w-full sm:w-1/2 md:w-1/4 lg:w-[217px]">
+                <h3 class="text-2xl font-bold text-white">Exclusive</h3>
+                <h4 class="text-xl font-medium text-white">Subscribe</h4>
+                <p class="text-base text-white">Get 10% off your first order</p>
+                <div class="relative border border-white rounded py-3 pl-4 pr-2 flex items-center">
+                    <input type="email" placeholder="Enter your email" class="bg-transparent text-white placeholder-gray-400 focus:outline-none w-full">
+                    <!-- Send Icon -->
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="flex flex-col gap-6 w-full sm:w-1/2 md:w-1/4 lg:w-[175px]">
+                <h3 class="text-xl font-medium text-white">Support</h3>
+                <div class="flex flex-col gap-4 text-base text-white">
+                    <address class="not-italic">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</address>
+                    <a href="mailto:exclusive@gmail.com" class="hover:underline">exclusive@gmail.com</a>
+                    <a href="tel:+88015-88888-9999" class="hover:underline">+88015-88888-9999</a>
+                </div>
+            </div>
+
+            <!-- Account Section -->
+            <div class="flex flex-col gap-6 w-full sm:w-1/2 md:w-1/4 lg:w-[123px]">
+                <h3 class="text-xl font-medium text-white">Account</h3>
+                <div class="flex flex-col gap-4 text-base text-white">
+                    <a href="#" class="hover:underline">My Account</a>
+                    <a href="#" class="hover:underline">Login / Register</a>
+                    <a href="#" class="hover:underline">Cart</a>
+                    <a href="#" class="hover:underline">Wishlist</a>
+                    <a href="#" class="hover:underline">Shop</a>
+                </div>
+            </div>
+
+            <!-- Quick Link Section -->
+            <div class="flex flex-col gap-6 w-full sm:w-1/2 md:w-1/4 lg:w-[109px]">
+                <h3 class="text-xl font-medium text-white">Quick Link</h3>
+                <div class="flex flex-col gap-4 text-base text-white">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms Of Use</a>
+                    <a href="#" class="hover:underline">FAQ</a>
+                    <a href="#" class="hover:underline">Contact</a>
+                </div>
+            </div>
+
+            <!-- Download App Section -->
+            <div class="flex flex-col gap-6 w-full sm:w-1/2 md:w-1/4 lg:w-[198px]">
+                <h3 class="text-xl font-medium text-white">Download App</h3>
+                <p class="text-xs font-medium text-white">Save $3 with App New User Only</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-20 h-20 flex-shrink-0 bg-white p-1 flex items-center justify-center rounded-sm">
+                        <img src="https://placehold.co/76x76?text=QR" alt="QR Code" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <img src="https://placehold.co/110x40?text=Google+Play" alt="Google Play" class="w-[110px] h-10 object-cover rounded">
+                        <img src="https://placehold.co/110x40?text=App+Store" alt="App Store" class="w-[110px] h-10 object-cover rounded">
+                    </div>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="flex gap-6 mt-4">
+                    <a href="#" class="w-6 h-6"><img src="https://placehold.co/24x24?text=FB" alt="Facebook"></a>
+                    <a href="#" class="w-6 h-6"><img src="https://placehold.co/24x24?text=TW" alt="Twitter"></a>
+                    <a href="#" class="w-6 h-6"><img src="https://placehold.co/24x24?text=IG" alt="Instagram"></a>
+                    <a href="#" class="w-6 h-6"><img src="https://placehold.co/24x24?text=LI" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-16 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; Copyright Rimel 2022. All right reserved</p>
+        </div>
+    </footer>
+</section>
+
+</body>
+</html>

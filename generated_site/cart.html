@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-black">
+
+<!-- SCREEN: Cart -->
+<section class="min-h-screen flex flex-col bg-white">
+    <!-- Top Header -->
+    <div class="bg-black text-gray-50 py-3 text-sm font-normal">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <p class="leading-[21px]">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+                <a href="#" class="font-semibold leading-relaxed border-b border-gray-50">ShopNow</a>
+            </div>
+            <div class="flex items-center gap-1">
+                <span class="leading-[21px]">English</span>
+                <svg class="w-4 h-4 text-gray-50" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="py-10 border-b border-gray-300">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-black">Exclusive</a>
+            
+            <nav class="flex items-center gap-12">
+                <a href="#" class="text-base font-normal text-black">Home</a>
+                <a href="#" class="text-base font-normal text-black">Contact</a>
+                <a href="#" class="text-base font-normal text-black">About</a>
+                <a href="#" class="text-base font-normal text-black">Sign Up</a>
+            </nav>
+
+            <div class="flex items-center gap-6">
+                <div class="relative flex items-center bg-gray-100 rounded-md py-2 px-5 w-60">
+                    <input type="text" placeholder="What are you looking for?" class="bg-transparent outline-none text-xs font-normal w-full pr-8">
+                    <button class="absolute right-3">
+                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="relative">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">4</span>
+                    </a>
+                    <a href="#" class="relative">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
+                    </a>
+                    <a href="#" class="relative">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Roadmap (Breadcrumbs) -->
+    <nav class="max-w-7xl mx-auto px-4 mt-16">
+        <ol class="flex items-center gap-3 text-sm">
+            <li><a href="#" class="text-gray-600">Home</a></li>
+            <li>/</li>
+            <li><span class="text-black">Cart</span></li>
+        </ol>
+    </nav>
+
+    <!-- Main Cart Content -->
+    <main class="max-w-7xl mx-auto px-4 py-20 flex-grow">
+        <div class="flex flex-col gap-20">
+            <!-- Cart Items Section -->
+            <div class="flex flex-col gap-6">
+                <!-- Cart Header -->
+                <div class="bg-white rounded-md shadow-md p-6 flex justify-between items-center text-base font-normal text-black">
+                    <span class="w-1/4">Product</span>
+                    <span class="w-1/4 text-center">Price</span>
+                    <span class="w-1/4 text-center">Quantity</span>
+                    <span class="w-1/4 text-right">Subtotal</span>
+                </div>
+
+                <!-- Cart Item 1 -->
+                <div class="bg-white rounded-md shadow-md p-6 flex justify-between items-center text-base font-normal text-black relative">
+                    <button class="absolute -top-2 -left-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-xs z-10">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                    <div class="flex items-center gap-6 w-1/4">
+                        <img src="https://placehold.co/54x54?text=Monitor" alt="LCD Monitor" class="w-14 h-14 object-contain">
+                        <span>LCD Monitor</span>
+                    </div>
+                    <span class="w-1/4 text-center">$650</span>
+                    <div class="w-1/4 flex justify-center">
+                        <div class="flex items-center border border-black rounded-md h-11">
+                            <span class="px-3">01</span>
+                            <div class="flex flex-col h-full border-l border-black">
+                                <button class="w-6 h-1/2 flex items-center justify-center">
+                                    <svg class="w-2 h-2 fill-current" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg"><path d="M4 0L0 5H8L4 0Z"/></svg>
+                                </button>
+                                <button class="w-6 h-1/2 flex items-center justify-center">
+                                    <svg class="w-2 h-2 fill-current rotate-180" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg"><path d="M4 0L0 5H8L4 0Z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="w-1/4 text-right">$650</span>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div class="bg-white rounded-md shadow-md p-6 flex justify-between items-center text-base font-normal text-black relative">
+                    <button class="absolute -top-2 -left-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-xs z-10">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                    <div class="flex items-center gap-6 w-1/4">
+                        <img src="https://placehold.co/54x54?text=Gamepad" alt="H1 Gamepad" class="w-14 h-14 object-contain">
+                        <span>H1 Gamepad</span>
+                    </div>
+                    <span class="w-1/4 text-center">$550</span>
+                    <div class="w-1/4 flex justify-center">
+                        <div class="flex items-center border border-black rounded-md h-11">
+                            <span class="px-3">02</span>
+                            <div class="flex flex-col h-full border-l border-black">
+                                <button class="w-6 h-1/2 flex items-center justify-center">
+                                    <svg class="w-2 h-2 fill-current" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg"><path d="M4 0L0 5H8L4 0Z"/></svg>
+                                </button>
+                                <button class="w-6 h-1/2 flex items-center justify-center">
+                                    <svg class="w-2 h-2 fill-current rotate-180" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg"><path d="M4 0L0 5H8L4 0Z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="w-1/4 text-right">$1100</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-between items-center">
+                <button class="px-12 py-4 border border-black rounded-md text-base font-medium">Return To Shop</button>
+                <button class="px-12 py-4 border border-black rounded-md text-base font-medium">Update Cart</button>
+            </div>
+
+            <!-- Coupon Code & Cart Total -->
+            <div class="flex justify-between mt-10">
+                <!-- Coupon Code Input -->
+                <div class="flex items-center gap-4">
+                    <div class="border border-black rounded-md h-14 flex items-center px-6 w-[300px]">
+                        <input type="text" placeholder="Coupon Code" class="outline-none w-full text-base font-normal">
+                    </div>
+                    <button class="bg-red-600 text-white px-12 py-4 rounded-md text-base font-medium">Apply Coupon</button>
+                </div>
+
+                <!-- Cart Total Summary -->
+                <div class="border border-black rounded-md p-6 w-[470px] flex flex-col gap-4">
+                    <h2 class="text-xl font-medium">Cart Total</h2>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                        <span class="text-base font-normal">Subtotal:</span>
+                        <span class="text-base font-normal">$1750</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                        <span class="text-base font-normal">Shipping:</span>
+                        <span class="text-base font-normal">Free</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-base font-normal">Total:</span>
+                        <span class="text-base font-normal">$1750</span>
+                    </div>
+                    <button class="bg-red-600 text-white px-12 py-4 rounded-md text-base font-medium text-center mt-4">Procees to checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-50 pt-20 pb-6 mt-20">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between gap-12">
+            <!-- Exclusive -->
+            <div class="flex flex-col gap-4 w-1/5">
+                <h3 class="text-2xl font-bold text-gray-50">Exclusive</h3>
+                <h4 class="text-xl font-medium text-gray-50">Subscribe</h4>
+                <p class="text-base font-normal leading-relaxed">Get 10% off your first order</p>
+                <div class="relative border border-gray-50 rounded-md py-3 px-4 flex items-center justify-between">
+                    <input type="email" placeholder="Enter your email" class="bg-transparent outline-none w-full text-sm placeholder-gray-50">
+                    <button class="absolute right-4">
+                        <svg class="w-5 h-5 text-gray-50" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Support -->
+            <div class="flex flex-col gap-4 w-1/5">
+                <h4 class="text-xl font-medium text-gray-50">Support</h4>
+                <p class="text-base font-normal leading-relaxed">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                <p class="text-base font-normal leading-relaxed">exclusive@gmail.com</p>
+                <p class="text-base font-normal leading-relaxed">+88015-88888-9999</p>
+            </div>
+
+            <!-- Account -->
+            <div class="flex flex-col gap-4 w-1/5">
+                <h4 class="text-xl font-medium text-gray-50">Account</h4>
+                <a href="#" class="text-base font-normal leading-relaxed">My Account</a>
+                <a href="#" class="text-base font-normal leading-relaxed">Login / Register</a>
+                <a href="#" class="text-base font-normal leading-relaxed">Cart</a>
+                <a href="#" class="text-base font-normal leading-relaxed">Wishlist</a>
+                <a href="#" class="text-base font-normal leading-relaxed">Shop</a>
+            </div>
+
+            <!-- Quick Link -->
+            <div class="flex flex-col gap-4 w-1/5">
+                <h4 class="text-xl font-medium text-gray-50">Quick Link</h4>
+                <a href="#" class="text-base font-normal leading-relaxed">Privacy Policy</a>
+                <a href="#" class="text-base font-normal leading-relaxed">Terms Of Use</a>
+                <a href="#" class="text-base font-normal leading-relaxed">FAQ</a>
+                <a href="#" class="text-base font-normal leading-relaxed">Contact</a>
+            </div>
+
+            <!-- Download App -->
+            <div class="flex flex-col gap-4 w-1/5">
+                <h4 class="text-xl font-medium text-gray-50">Download App</h4>
+                <p class="text-xs font-medium leading-[18px]">Save $3 with App New User Only</p>
+                <div class="flex items-center gap-2">
+                    <img src="https://placehold.co/80x80?text=QR" alt="QR Code" class="w-20 h-20 bg-white p-1 rounded-md">
+                    <div class="flex flex-col gap-1">
+                        <img src="https://placehold.co/110x40?text=GooglePlay" alt="Google Play" class="w-[110px] h-10 rounded-md border border-gray-50 p-1">
+                        <img src="https://placehold.co/110x40?text=AppStore" alt="App Store" class="w-[110px] h-10 rounded-md border border-gray-50 p-1">
+                    </div>
+                </div>
+                <div class="flex gap-6 mt-2">
+                    <a href="#" aria-label="Facebook">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.812c-3.266 0-4.188 1.408-4.188 4.035v2.965z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.153-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.447 0-6.236 2.783-6.236 6.23s2.789 6.23 6.236 6.23c1.326 0 2.522-.418 3.532-1.135-.98.77-2.261 1.226-3.646 1.226-2.654 0-4.815-2.16-4.815-4.814 0-.197.016-.392.046-.583-.418-.084-.823-.162-1.227-.249-1.042-.209-2.062-.489-3.037-.841-.397.68-.628 1.472-.628 2.33 0 1.61.819 3.033 2.064 3.864-.755-.022-1.46-.232-2.079-.571-.064 1.762 1.258 3.23 2.923 3.565-.246.064-.504.098-.767.098-.188 0-.374-.019-.556-.053.465 1.455 1.815 2.508 3.414 2.536-1.583 1.24-3.57 1.983-5.733 1.983-.373 0-.74-.022-1.1-.065 2.059 1.323 4.494 2.094 7.135 2.094 8.567 0 13.254-7.087 13.254-13.254 0-.2-.005-.398-.013-.594.912-.656 1.7-1.477 2.325-2.502z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.071 1.17.055 1.805.249 2.227.415.56.217.96.477 1.382.9.422.422.682.822.899 1.382.166.422.36 1.057.415 2.227.059 1.266.071 1.646.071 4.85s-.012 3.584-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.56-.477.96-.9.1382-.422.422-.822.682-1.382.899-.422.166-1.057.36-2.227.415-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.071c-1.17-.055-1.805-.249-2.227-.415-.56-.217-.96-.477-1.382-.9-.422-.422-.682-.822-.899-1.382-.166-.422-.36-1.057-.415-2.227-.059-1.266-.071-1.646-.071-4.85s.012-3.584.071-4.85c.055-1.17.249-1.805.415-2.227.217-.56.477-.96.9-1.382.422-.422.822-.682 1.382-.899.422-.166 1.057-.36 2.227-.415C8.416 2.175 8.796 2.163 12 2.163zm0 3.012c-3.148 0-3.513.011-4.757.07c-1.077.05-1.464.205-1.674.29-.21.085-.373.18-.544.35-.171.17-.266.333-.35.544-.085.21-.24.597-.29 1.674-.059 1.244-.07 1.608-.07 4.757s.011 3.513.07 4.757c.05 1.077.205 1.464.29 1.674.085.21.18.373.35.544.17.171.333.266.544.35.21.085.597.24 1.674.29 1.244.059 1.608.07 4.757.07s3.513-.011 4.757-.07c1.077-.05 1.464-.205 1.674-.29.21-.085.373-.18.544-.35.171-.17.266-.333.35-.544.085-.21.24-.597.29-1.674.059-1.244.07-1.608.07-4.757s-.011-3.513-.07-4.757c-.05-1.077-.205-1.464-.29-1.674-.085-.21-.18-.373-.35-.544-.171-.17-.266-.333-.544-.35-.21-.085-.597-.24-1.674-.29-1.244-.059-1.608-.07-4.757-.07zm0 3.75c-2.316 0-4.197 1.881-4.197 4.197s1.881 4.197 4.197 4.197 4.197-1.881 4.197-4.197-1.881-4.197-4.197-4.197zm0 2.658c.854 0 1.54.686 1.54 1.54s-.686 1.54-1.54 1.54-1.54-.686-1.54-1.54.686-1.54 1.54-1.54z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38-.112-2.5 2.48-2.5s2.48 1.119 2.48 2.5zm.02 6.5h-5v16h5v-16zm7.982 0h-7.982v16h7.982v-8.75c0-4.673 5.008-5.175 5.008 0v8.75h4.992v-11.594c0-3.255-1.41-4.321-3.999-4.321-1.996 0-3.999 1.32-3.999 4.673v1.242z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-20 pt-6 text-center text-gray-50 text-base">
+            <p class="flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke-width="1.5"></circle>
+                    <path d="M9 12a3 3 0 116 0 3 3 0 01-6 0z" stroke-width="1.5"></path>
+                    <path d="M15 9V7m0 2h-1m-1 0H9m-1 0V7" stroke-width="1.5"></path>
+                </svg>
+                Copyright Rimel 2022. All right reserved
+            </p>
+        </div>
+    </footer>
+</section>
+
+</body>
+</html>
