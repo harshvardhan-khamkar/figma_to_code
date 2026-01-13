@@ -1,210 +1,185 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
-<!-- SCREEN: Contact -->
-<section class="min-h-screen flex flex-col">
-    <!-- Top Header -->
-    <div class="bg-black text-white text-xs sm:text-sm font-normal py-3">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center space-y-2 sm:space-y-0">
-            <div class="flex items-center gap-2">
+<header>
+    <div class="bg-black text-white flex items-center justify-center py-2 text-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
                 <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-                <a href="#" class="font-semibold underline">ShopNow</a>
+                <button class="font-semibold">ShopNow</button>
             </div>
-            <div class="flex items-center gap-1">
-                <p>English</p>
-                <!-- DropDown Icon -->
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <div class="flex items-center space-x-2">
+                <span>English</span>
+                <svg class="w-3 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </div>
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="py-8 border-b border-gray-200">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-            <!-- Logo -->
-            <a href="#" class="text-2xl font-bold text-gray-900">Exclusive</a>
-
-            <!-- Navigation -->
-            <nav>
-                <ul class="flex space-x-8 sm:space-x-12 md:space-x-16 text-gray-900">
-                    <li><a href="#" class="text-base hover:text-red-500">Home</a></li>
-                    <li><a href="#" class="text-base font-semibold border-b border-gray-900 pb-1">Contact</a></li>
-                    <li><a href="#" class="text-base hover:text-red-500">About</a></li>
-                    <li><a href="#" class="text-base hover:text-red-500">Sign Up</a></li>
-                </ul>
-            </nav>
-
-            <!-- Search and Icons -->
-            <div class="flex items-center space-x-4 sm:space-x-6">
-                <!-- Search Component -->
-                <div class="relative bg-gray-100 rounded-md px-4 py-2 flex items-center w-64">
-                    <input type="text" placeholder="What are you looking for?" class="bg-transparent outline-none text-xs text-gray-700 w-full">
-                    <!-- Search Icon -->
-                    <svg class="h-4 w-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </div>
-
-                <!-- Icons -->
-                <div class="flex items-center space-x-4">
-                    <!-- Wishlist Icon -->
-                    <a href="#" class="relative">
-                        <svg class="h-6 w-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+    <nav class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="flex items-center space-x-16">
+            <h1 class="text-2xl font-bold">Exclusive</h1>
+            <ul class="flex space-x-12">
+                <li><a href="#" class="text-black hover:text-gray-700">Home</a></li>
+                <li>
+                    <a href="#" class="text-black hover:text-gray-700 font-semibold relative">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500"></span>
                     </a>
-                    <!-- Cart Icon -->
-                    <a href="#" class="relative">
-                        <svg class="h-6 w-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </a>
-                    <!-- User Icon -->
-                    <a href="#" class="relative">
-                        <svg class="h-6 w-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                    </a>
+                </li>
+                <li><a href="#" class="text-black hover:text-gray-700">About</a></li>
+                <li><a href="#" class="text-black hover:text-gray-700">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center bg-gray-100 rounded-md px-4 py-2">
+                <input type="text" placeholder="What are you looking for?" class="bg-transparent focus:outline-none text-sm w-48">
+                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <div class="flex space-x-2">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.342C4.962 5.243 6.054 4.5 7.25 4.5h9.5c1.196 0 2.288.743 2.93 1.842M6.5 17.5l3.5-3.5 3.5 3.5M9 14.5v-2.5"></path></svg>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 19.5C2 17.784 3.384 16.5 5.118 16.5h13.764C20.616 16.5 22 17.784 22 19.5v.987c0 1.692-1.493 3.013-3.185 3.013H5.185C3.493 23.499 2 22.177 2 20.486V19.5zM15 10a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12a3 3 0 100-6 3 3 0 000 6z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 7.5v.01M16.5 7.5v.01M7.5 16.5v.01M16.5 16.5v.01M12 16.5v.01M12 12v.01M7.5 12v.01M16.5 12v.01"></path></svg>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
+    <hr class="border-gray-300 w-full">
+    <div class="container mx-auto px-4 py-4 flex items-center space-x-3 text-sm">
+        <a href="#" class="text-black">Home</a>
+        <svg class="w-2 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        <a href="#" class="text-black">Contact</a>
+    </div>
+</header>
 
-    <main class="flex-grow">
-        <!-- Breadcrumbs -->
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <nav class="flex items-center text-sm space-x-2">
-                <a href="#" class="text-gray-500 hover:text-red-500">Home</a>
-                <span class="text-gray-500">/</span>
-                <span class="text-gray-900 font-medium">Contact</span>
-            </nav>
-        </div>
-
-        <!-- Contact Content Section -->
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Left Column: Contact Info -->
-                <div class="md:col-span-1 bg-white shadow-md rounded-md p-8 flex flex-col gap-8">
-                    <!-- Call To Us Section -->
-                    <div class="flex flex-col gap-6">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center">
-                                <!-- Phone Icon -->
-                                <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L9.5 13.507A11.001 11.001 0 0014.493 17.5l1.292-1.292a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-medium text-gray-900">Call To Us</h3>
-                        </div>
-                        <p class="text-gray-700 text-sm">We are available 24/7, 7 days a week.</p>
-                        <p class="text-gray-700 text-sm">Phone: +8801611112222</p>
-                    </div>
-
-                    <div class="border-b border-gray-300 w-full"></div>
-
-                    <!-- Write To Us Section -->
-                    <div class="flex flex-col gap-6">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center">
-                                <!-- Mail Icon -->
-                                <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 6h.01M21 12V7a2 2 0 00-2-2H5a2 2 0 00-2 2v5l9 6 9-6z"></path></svg>
-                            </div>
-                            <h3 class="text-lg font-medium text-gray-900">Write To US</h3>
-                        </div>
-                        <p class="text-gray-700 text-sm">Fill out our form and we will contact you within 24 hours.</p>
-                        <p class="text-gray-700 text-sm">Emails: customer@exclusive.com</p>
-                        <p class="text-gray-700 text-sm">Emails: support@exclusive.com</p>
-                    </div>
+<main class="container mx-auto px-4 py-16 flex gap-8">
+    <div class="w-1/3 bg-white rounded-lg shadow-md p-8">
+        <div class="flex flex-col space-y-8">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.066 0.758a1 1 0 00-.385 1.527L11.11 17.13a10.956 10.956 0 001.615.098c3.35.068 6.702-.606 9.858-2.149l.482-.482a1 1 0 000-1.21l-2.066-0.758a1 1 0 01-.502-1.21L18.487 7.14a1 1 0 01.948-.684h3.28a2 2 0 012 2v3.28a1 1 0 01-.502 1.21l-2.066 0.758a1 1 0 00-.385 1.527L21.58 17.13a10.956 10.956 0 01-1.615.098c-1.11.035-2.215-.073-3.285-.295M15 12a.75.75 0 00-.75.75v6c0 .414.336.75.75.75h3c.414 0 .75-.336.75-.75v-6a.75.75 0 00-.75-.75h-3z"></path></svg>
                 </div>
-
-                <!-- Right Column: Contact Form -->
-                <div class="md:col-span-2 bg-white shadow-md rounded-md p-8 flex flex-col gap-8">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <input type="text" placeholder="Your Name *" class="w-full bg-gray-100 rounded-md p-3 text-sm outline-none">
-                        <input type="email" placeholder="Your Email *" class="w-full bg-gray-100 rounded-md p-3 text-sm outline-none">
-                        <input type="tel" placeholder="Your Phone *" class="w-full bg-gray-100 rounded-md p-3 text-sm outline-none">
-                    </div>
-                    <textarea placeholder="Your Message" class="w-full bg-gray-100 rounded-md p-3 text-sm outline-none h-40 resize-none"></textarea>
-                    <button class="self-end bg-red-500 text-white px-8 py-3 rounded-md hover:bg-red-600 transition-colors font-medium">Send Message</button>
+                <div>
+                    <p class="text-lg font-medium">Call To Us</p>
+                    <p class="text-sm text-gray-600">We are available 24/7, 7 days a week.</p>
+                    <p class="text-sm text-gray-600">Phone: +8801611112222</p>
+                </div>
+            </div>
+            <hr class="border-gray-300">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0a2.25 2.25 0 00-2.25-2.25h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9 6.75l-9-6.75"></path></svg>
+                </div>
+                <div>
+                    <p class="text-lg font-medium">Write To US</p>
+                    <p class="text-sm text-gray-600">Fill out our form and we will contact you within 24 hours.</p>
+                    <p class="text-sm text-gray-600">Emails: customer@exclusive.com</p>
+                    <p class="text-sm text-gray-600">Emails: support@exclusive.com</p>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-16 sm:py-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-x-12 sm:gap-y-16 lg:gap-x-8 lg:gap-y-0 pb-16">
-                <!-- Exclusive Column -->
-                <div class="flex flex-col gap-6">
-                    <h2 class="text-2xl font-bold">Exclusive</h2>
-                    <p class="text-xl font-medium">Subscribe</p>
-                    <p class="text-base text-gray-300">Get 10% off your first order</p>
-                    <div class="relative border border-gray-500 rounded-md px-4 py-2 flex items-center w-full max-w-[217px]">
-                        <input type="email" placeholder="Enter your email" class="bg-transparent outline-none text-base text-gray-300 w-full placeholder-gray-300">
-                        <!-- Send Icon -->
-                        <svg class="h-5 w-5 text-gray-300 absolute right-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l.684-.009a1 1 0 00.912-1.261l-1.446-4.337a1 1 0 01.373-1.073l1.964-1.964a1 1 0 011.414 0l.964.964a1 1 0 001.414 0l1.964-1.964a1 1 0 011.073-.373l4.337 1.446a1 1 0 001.261-.912l.009-.684a1 1 0 00-1.409-1.169l-14-7z"></path></svg>
-                    </div>
-                </div>
-
-                <!-- Support Column -->
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-xl font-medium">Support</h3>
-                    <p class="text-base text-gray-300">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
-                    <a href="mailto:exclusive@gmail.com" class="text-base text-gray-300 hover:text-white">exclusive@gmail.com</a>
-                    <a href="tel:+88015-88888-9999" class="text-base text-gray-300 hover:text-white">+88015-88888-9999</a>
-                </div>
-
-                <!-- Account Column -->
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-xl font-medium">Account</h3>
-                    <ul class="flex flex-col gap-4">
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">My Account</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Login / Register</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Cart</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Wishlist</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Shop</a></li>
-                    </ul>
-                </div>
-
-                <!-- Quick Link Column -->
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-xl font-medium">Quick Link</h3>
-                    <ul class="flex flex-col gap-4">
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Terms Of Use</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQ</a></li>
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Download App Column -->
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-xl font-medium">Download App</h3>
-                    <p class="text-xs font-medium text-gray-300">Save $3 with App New User Only</p>
-                    <div class="flex items-center gap-2">
-                        <img src="https://placehold.co/80x80?text=QR" alt="QR Code" class="w-20 h-20 bg-white p-1 rounded">
-                        <div class="flex flex-col gap-1">
-                            <img src="https://placehold.co/110x40?text=GooglePlay" alt="Google Play" class="w-[110px] h-10 object-cover rounded">
-                            <img src="https://placehold.co/110x40?text=AppStore" alt="App Store" class="w-[110px] h-10 object-cover rounded">
-                        </div>
-                    </div>
-                    <div class="flex gap-4 pt-2">
-                        <!-- Social Media Icons -->
-                        <a href="#" class="text-gray-300 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.297 2.204a8.955 8.955 0 011.026-.118c2.046.046 3.99.782 5.568 2.164a7.996 7.996 0 002.394-1.127l.006.004c.032.02.049.071.049.117v.149c0 .114-.075.209-.187.234a2.91 2.91 0 00-1.02.138 6.134 6.134 0 01-1.77 1.087c.21.012.421.018.632.018.069 0 .138 0 .207-.002.062-.001.124-.001.186-.002.07-.001.14-.002.21-.002.115-.001.228-.001.343 0a1.002 1.002 0 01.996 1.002c0 .524-.42.946-.944.946-.076 0-.151-.005-.226-.014a12.064 12.064 0 01-5.181 1.769c-.046 0-.092.001-.138.001a11.084 11.084 0 00-2.453-.13c-2.39-.247-4.329-1.579-5.176-3.56a5.772 5.772 0 01-.144-1.06c-.007-.15-.004-.29-.001-.43-.001-.061-.001-.122 0-.183.002-.124.01-.247.02-.37.01-.123.023-.245.039-.367a1.003 1.003 0 01.995-.929c.074.004.148.01.222.019a.998.998 0 01.782.43c.121.215.22.443.298.68a.997.997 0 01-.212 1.258c-.147.1-.303.189-.467.27a.998.998 0 01-.434.054c-.16-.013-.314-.05-.46-.11l-.004-.002a.997.997 0 01-.397-.732c-.05-.236-.067-.48-.049-.723-.001-.06-.001-.121 0-.181.001-.06.002-.12.004-.18a.997.997 0 01.73-.996l.044-.004a.995.995 0 01.693.284c.159.14.285.31.378.508.134.284.195.59.195.9V12c0 2.257-1.153 4.29-3.045 5.485-.29.18-.59.34-.9.48a1.002 1.002 0 01-.762.016c-.035-.005-.07-.01-.105-.015a1.002 1.002 0 01-.782-1.077c.05-.27.14-.523.268-.758a.996.996 0 01.996-.583c.094.009.188.02.282.031.139.015.278.031.417.046a1.003 1.003 0 01.895 1.134c-.03.197-.102.385-.213.555-.262.404-.593.754-.98 1.042-1.78.718-3.795.834-5.698.34a8.924 8.924 0 01-3.69-2.902c-.042-.058-.09-.115-.145-.168a1.002 1.002 0 01-.04-1.391c.214-.265.512-.423.834-.457a.996.996 0 01.983.82c.04.212.046.435.018.657-.024.192-.09.37-.197.534a6.975 6.975 0 002.394 2.19c.404.18.825.32 1.261.418a.997.997 0 01.916.115c.18.106.299.294.316.51a.998.998 0 01-.482.913c-.22.12-.455.215-.702.285a7.02 7.02 0 01-3.687-.893c-.902-.459-1.705-1.124-2.394-1.979a8.948 8.948 0 01-2.402-4.007c-.126-.499-.19-1.011-.192-1.523C2 6.477 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a10 10 0 00-11.703-9.796z" /></svg></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.15 1.48.337 1.972.59.563.287.962.65 1.316 1.09.36.44.662.946.872 1.543.211.601.353 1.27.398 2.15.046.901.056 1.177.056 3.406 0 2.229-.01 2.505-.056 3.406-.045.88-.187 1.549-.398 2.15-.211.597-.512 1.103-.872 1.543-.354.44-.753.803-1.316 1.09-.492.253-1.129.44-1.972.59-.993.046-1.347.048-3.797.048s-2.784-.002-3.797-.048c-.843-.15-1.48-.337-1.972-.59-.563-.287-.962-.65-1.316-1.09-.36-.44-.662-.946-.872-1.543-.211-.601-.353-1.27-.398-2.15-.046-.901-.056-1.177-.056-3.406 0-2.229.01-2.505.056-3.406.045-.88.187-1.549.398-2.15.211-.597.512-1.103.872-1.543.354-.44.753-.803 1.316-1.09.492-.253 1.129-.44 1.972-.59C9.536 2.002 9.89 2 12.315 2zm0 0l-1.414 1.414zM21 12c0-1.488-.01-1.928-.057-2.746-.048-.79-.193-1.273-.42-1.59-.228-.327-.514-.54-.86-.689-.5-.22-1.077-.323-1.916-.369-1.057-.057-1.454-.067-3.693-.067h-.001c-2.239 0-2.636.01-3.693.067-.839.046-1.416.149-1.916.369-.346.149-.632.362-.86.689-.227.317-.372.8-.42 1.59-.047.818-.057 1.258-.057 2.746v.001c0 1.488.01 1.928.057 2.746.048.79.193 1.273.42 1.59.228.327.514.54.86.689.5.22 1.077.323 1.916.369 1.057.057 1.454.067 3.693.067h.001c2.239 0 2.636-.01 3.693-.067.839-.046 1.416-.149 1.916-.369.346-.149.632-.362.86-.689.227.317.372.8.42-1.59.047-.818.057-1.258.057-2.746v-.001zM12 16.035c-2.22 0-4.035-1.815-4.035-4.035s1.815-4.035 4.035-4.035 4.035 1.815 4.035 4.035-1.815 4.035-4.035 4.035zm0-6.57c-1.498 0-2.709 1.211-2.709 2.709s1.211 2.709 2.709 2.709 2.709-1.211 2.709-2.709-1.211-2.709-2.709-2.709z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 3.066 7.842 7.152 8.577v-6.077H7.472v-2.5H9.152v-1.838c0-1.789 1.082-2.766 2.684-2.766 0.778 0 1.444 0.058 1.636 0.083v2.338h-1.396c-0.686 0-0.817 0.327-0.817 0.806v1.087h2.51l-0.428 2.5H12.261v6.077C16.934 19.842 21 16.286 21 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.742 7 2.222v7.013z" clip-rule="evenodd" /></svg></a>
-                    </div>
-                </div>
+    <div class="w-2/3 bg-white rounded-lg shadow-md p-8">
+        <div class="grid grid-cols-2 gap-6 mb-8">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Enter your name">
             </div>
-
-            <div class="border-t border-gray-700 pt-6 mt-10 text-center text-gray-500 text-sm flex flex-col items-center justify-center gap-2">
-                <!-- Copyright Icon -->
-                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm0-14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.103 0-2-0.897-2-2s0.897-2 2-2 2 0.897 2 2-0.897 2-2 2z" clip-rule="evenodd" /></svg>
-                <p>Copyright Rimel 2022. All right reserved</p>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email *</label>
+                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Enter your email">
+            </div>
+            <div class="col-span-2">
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Your Phone *</label>
+                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Enter your phone number">
+            </div>
+            <div class="col-span-2">
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+                <textarea id="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Write your message here..."></textarea>
             </div>
         </div>
-    </footer>
-</section>
+        <div class="flex justify-end">
+            <button class="bg-red-500 text-white px-12 py-4 rounded-md font-medium hover:bg-red-600 transition duration-300">
+                Send Message
+            </button>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-black text-white py-16">
+    <div class="container mx-auto px-4 grid grid-cols-4 gap-16">
+        <div>
+            <h3 class="text-2xl font-bold mb-6">Exclusive</h3>
+            <p class="text-white text-base font-medium mb-6">Subscribe</p>
+            <p class="text-white text-sm mb-6">Get 10% off your first order</p>
+            <div class="flex items-center bg-transparent border border-white rounded-md px-4 py-3">
+                <input type="text" placeholder="Enter your email" class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-40">
+                <svg class="w-6 h-6 text-white cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12L3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C10.714 3 9.51824 3.32593 8.5 3.875"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3L12 12L15 9"></path></svg>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-xl font-medium mb-6">Support</h3>
+            <ul class="space-y-4">
+                <li>
+                    <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                </li>
+                <li>exclusive@gmail.com</li>
+                <li>+88015-88888-9999</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-medium mb-6">Account</h3>
+            <ul class="space-y-4">
+                <li>My Account</li>
+                <li>Login / Register</li>
+                <li>Cart</li>
+                <li>Wishlist</li>
+                <li>Shop</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-medium mb-6">Quick Link</h3>
+            <ul class="space-y-4">
+                <li>Privacy Policy</li>
+                <li>Terms Of Use</li>
+                <li>FAQ</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-medium mb-6">Download App</h3>
+            <p class="text-xs font-medium mb-2">Save $3 with App New User Only</p>
+            <div class="flex items-center gap-2">
+                <img src="https://placehold.co/80x80?text=QR+Code" alt="QR Code" class="rounded-md">
+                <div class="flex flex-col gap-2">
+                    <img src="https://placehold.co/110x40?text=GooglePlay" alt="Google Play" class="rounded-md">
+                    <img src="https://placehold.co/110x40?text=AppStore" alt="App Store" class="rounded-md">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto px-4 mt-16 flex justify-center">
+        <div class="flex items-center space-x-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h1v13.13L12 12l-7 3.13V2h12z"></path></svg>
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.5V21a1 1 0 001 1h16a1 1 0 001-1v-7.5a1.5 1.5 0 00-1.5-1.5h-13a1.5 1.5 0 00-1.5 1.5z"></path></svg>
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75a8.25 8.25 0 11-16.5 0 8.25 8.25 0 0116.5 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 7.5h.75v.75H6v-.75zM6 10.5h.75v.75H6v-.75zM6 13.5h.75v.75H6v-.75z"></path></svg>
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H10.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h3a1.5 1.5 0 001.5-1.5V7.5a1.5 1.5 0 00-1.5-1.5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 3v1.5h3V3"></path></svg>
+        </div>
+    </div>
+    <div class="container mx-auto px-4 mt-12 text-center text-gray-500">
+        <p>Copyright Rimel 2022. All right reserved</p>
+    </div>
+</footer>
 
 </body>
 </html>

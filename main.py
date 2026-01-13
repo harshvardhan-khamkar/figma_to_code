@@ -1,22 +1,30 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
+
 from models import ConvertRequest
 from Services.figma_service import get_figma_file
 from Services.layout_parser import parse_figma_layout
 from Services.ai_services import generate_code
 from storedb import save_figma_file, get_cached_figma
+
 import os
 import zipfile
 import shutil
 
-
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():
-    return {"message": "welcome to figma to code"}
-
+    return {"message": "Kriti backend running"}
 
 @app.post("/convert")
 def convert_design(req: ConvertRequest):
@@ -39,18 +47,19 @@ def convert_design(req: ConvertRequest):
                 framework=req.framework
             )
 
-        # Create temp output folder
         out_dir = "generated_site"
+
         if os.path.exists(out_dir):
             shutil.rmtree(out_dir)
+
         os.makedirs(out_dir)
 
         pages = layout.get("pages", [])
 
         if not pages:
-            raise Exception("No pages found in parsed layout")
+            raise Exception("No pages found in layout")
 
-        # CORE LOOP 
+        #CORE loop
         for page in pages:
             for screen in page["screens"]:
                 screen_name = screen["screen"].lower().replace(" ", "_")
@@ -58,7 +67,7 @@ def convert_design(req: ConvertRequest):
 
                 print(f"[AI] Generating: {screen_name}") # debug log
 
-                # send ONLY one screen to AI
+                # one screen at a time
                 screen_layout = {
                     "page": page["page"],
                     "screen": screen["screen"],
@@ -73,10 +82,10 @@ def convert_design(req: ConvertRequest):
 
                 with open(os.path.join(out_dir, filename), "w", encoding="utf-8") as f:
                     f.write(code)
-                
-                print(f"[OK] Saved: {filename}") # debug log
 
-        # zip everything
+                print(f"[OK] Saved: {filename}") # debug log
+           
+        # Create ZIP
         zip_path = "figma_site.zip"
         if os.path.exists(zip_path):
             os.remove(zip_path)
@@ -89,7 +98,13 @@ def convert_design(req: ConvertRequest):
                         arcname=file
                     )
 
-        return FileResponse(zip_path, filename="figma_site.zip")
+        return {
+            "downloadUrl": "http://127.0.0.1:8000/download"
+        }
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/download")
+def download_zip():
+    return FileResponse("figma_site.zip", filename="figma_site.zip")
