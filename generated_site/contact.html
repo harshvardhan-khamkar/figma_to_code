@@ -1,185 +1,224 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Exclusive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="font-sans text-black">
 
-<header>
-    <div class="bg-black text-white flex items-center justify-center py-2 text-sm">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-                <button class="font-semibold">ShopNow</button>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span>English</span>
-                <svg class="w-3 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-        </div>
-    </div>
+    <!-- SCREEN: Contact -->
+    <section class="min-h-screen flex flex-col">
 
-    <nav class="container mx-auto px-4 py-6 flex justify-between items-center">
-        <div class="flex items-center space-x-16">
-            <h1 class="text-2xl font-bold">Exclusive</h1>
-            <ul class="flex space-x-12">
-                <li><a href="#" class="text-black hover:text-gray-700">Home</a></li>
-                <li>
-                    <a href="#" class="text-black hover:text-gray-700 font-semibold relative">
-                        Contact
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500"></span>
-                    </a>
-                </li>
-                <li><a href="#" class="text-black hover:text-gray-700">About</a></li>
-                <li><a href="#" class="text-black hover:text-gray-700">Sign Up</a></li>
-            </ul>
-        </div>
-        <div class="flex items-center space-x-4">
-            <div class="flex items-center bg-gray-100 rounded-md px-4 py-2">
-                <input type="text" placeholder="What are you looking for?" class="bg-transparent focus:outline-none text-sm w-48">
-                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </div>
-            <div class="flex space-x-2">
-                <div class="w-8 h-8 flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.342C4.962 5.243 6.054 4.5 7.25 4.5h9.5c1.196 0 2.288.743 2.93 1.842M6.5 17.5l3.5-3.5 3.5 3.5M9 14.5v-2.5"></path></svg>
+        <!-- Top Header -->
+        <header class="bg-black text-white text-sm py-3">
+            <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <p class="font-normal leading-[21px]">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+                    <a href="#" class="font-semibold leading-[24px] underline ml-2">ShopNow</a>
                 </div>
-                <div class="w-8 h-8 flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 19.5C2 17.784 3.384 16.5 5.118 16.5h13.764C20.616 16.5 22 17.784 22 19.5v.987c0 1.692-1.493 3.013-3.185 3.013H5.185C3.493 23.499 2 22.177 2 20.486V19.5zM15 10a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                </div>
-                <div class="w-8 h-8 flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12a3 3 0 100-6 3 3 0 000 6z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 7.5v.01M16.5 7.5v.01M7.5 16.5v.01M16.5 16.5v.01M12 16.5v.01M12 12v.01M7.5 12v.01M16.5 12v.01"></path></svg>
+                <div class="flex items-center gap-1 leading-[21px]">
+                    <span class="font-normal">English</span>
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <svg class="w-3 h-2" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.00006 1.00006L6.50006 6.50006L12.0001 1.00006" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <hr class="border-gray-300 w-full">
-    <div class="container mx-auto px-4 py-4 flex items-center space-x-3 text-sm">
-        <a href="#" class="text-black">Home</a>
-        <svg class="w-2 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        <a href="#" class="text-black">Contact</a>
-    </div>
-</header>
+        </header>
 
-<main class="container mx-auto px-4 py-16 flex gap-8">
-    <div class="w-1/3 bg-white rounded-lg shadow-md p-8">
-        <div class="flex flex-col space-y-8">
-            <div class="flex items-center space-x-4">
-                <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.066 0.758a1 1 0 00-.385 1.527L11.11 17.13a10.956 10.956 0 001.615.098c3.35.068 6.702-.606 9.858-2.149l.482-.482a1 1 0 000-1.21l-2.066-0.758a1 1 0 01-.502-1.21L18.487 7.14a1 1 0 01.948-.684h3.28a2 2 0 012 2v3.28a1 1 0 01-.502 1.21l-2.066 0.758a1 1 0 00-.385 1.527L21.58 17.13a10.956 10.956 0 01-1.615.098c-1.11.035-2.215-.073-3.285-.295M15 12a.75.75 0 00-.75.75v6c0 .414.336.75.75.75h3c.414 0 .75-.336.75-.75v-6a.75.75 0 00-.75-.75h-3z"></path></svg>
+        <!-- Main Header -->
+        <div class="max-w-6xl mx-auto py-8 px-4">
+            <nav class="flex justify-between items-center h-full">
+                <a href="#" class="text-2xl font-bold leading-[24px]">Exclusive</a>
+                <ul class="flex gap-12 text-base leading-[24px]">
+                    <li><a href="#" class="hover:text-red-600">Home</a></li>
+                    <li><a href="#" class="hover:text-red-600 font-normal relative">Contact
+                        <span class="absolute left-0 bottom-[-2px] w-full h-px bg-black"></span>
+                    </a></li>
+                    <li><a href="#" class="hover:text-red-600">About</a></li>
+                    <li><a href="#" class="hover:text-red-600">Sign Up</a></li>
+                </ul>
+                <div class="flex items-center gap-6">
+                    <div class="relative bg-gray-100 rounded-md py-[7px] pl-5 pr-3 flex items-center gap-[34px]">
+                        <input type="text" placeholder="What are you looking for?" class="bg-transparent outline-none text-xs leading-[18px] w-[153px]">
+                        <button class="w-6 h-6 flex items-center justify-center">
+                            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.6667 14.6667L11.5113 11.5113M13.5556 7.55556C13.5556 10.8712 10.8712 13.5556 7.55556 13.5556C4.23995 13.5556 1.55556 10.8712 1.55556 7.55556C1.55556 4.23995 4.23995 1.55556 7.55556 1.55556C10.8712 1.55556 13.5556 4.23995 13.5556 7.55556Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="w-8 h-8 flex items-center justify-center">
+                            <svg class="w-5 h-4" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.33331 6.55171C1.33331 3.52046 3.84431 1 6.87556 1C8.74681 1 10.2918 1.98409 10.9999 3.19318C11.7081 1.98409 13.2531 1 15.1243 1C18.1556 1 20.6666 3.52046 20.6666 6.55171C20.6666 10.7414 10.9999 17 10.9999 17C10.9999 17 1.33331 10.7414 1.33331 6.55171Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="w-8 h-8 flex items-center justify-center">
+                            <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 2H5.53268C6.43711 2 7.2343 2.58431 7.49179 3.52873L11.5141 17.5105C12.0163 19.1672 13.5828 20.3391 15.3706 20.3391H29.7999M8.49283 20.5C7.94055 20.5 7.49283 20.9477 7.49283 21.5C7.49283 22.0523 7.94055 22.5 8.49283 22.5C9.0451 22.5 9.49283 22.0523 9.49283 21.5C9.49283 20.9477 9.0451 20.5 8.49283 20.5ZM22.5072 20.5C21.9549 20.5 21.5072 20.9477 21.5072 21.5C21.5072 22.0523 21.9549 22.5 22.5072 22.5C23.0595 22.5 23.5072 22.0523 23.5072 21.5C23.5072 20.9477 23.0595 20.5 22.5072 20.5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="w-8 h-8 flex items-center justify-center">
+                            <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="11.5" r="5" stroke="black" stroke-width="1.5"/>
+                                <path d="M26 25C26 20 22 17 16 17C10 17 6 20 6 25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-lg font-medium">Call To Us</p>
-                    <p class="text-sm text-gray-600">We are available 24/7, 7 days a week.</p>
-                    <p class="text-sm text-gray-600">Phone: +8801611112222</p>
-                </div>
-            </div>
-            <hr class="border-gray-300">
-            <div class="flex items-center space-x-4">
-                <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0a2.25 2.25 0 00-2.25-2.25h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9 6.75l-9-6.75"></path></svg>
-                </div>
-                <div>
-                    <p class="text-lg font-medium">Write To US</p>
-                    <p class="text-sm text-gray-600">Fill out our form and we will contact you within 24 hours.</p>
-                    <p class="text-sm text-gray-600">Emails: customer@exclusive.com</p>
-                    <p class="text-sm text-gray-600">Emails: support@exclusive.com</p>
-                </div>
-            </div>
+            </nav>
         </div>
-    </div>
+        <hr class="border-gray-300">
 
-    <div class="w-2/3 bg-white rounded-lg shadow-md p-8">
-        <div class="grid grid-cols-2 gap-6 mb-8">
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
-                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Enter your name">
+        <main class="max-w-6xl mx-auto px-4 mt-20 mb-36 flex flex-col items-start w-full">
+            <!-- Roadmap / Breadcrumbs -->
+            <div class="flex items-center gap-3 text-sm font-normal leading-[21px]">
+                <a href="#" class="text-black/50">Home</a>
+                <span class="text-black/50">/</span>
+                <span class="text-black">Contact</span>
             </div>
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email *</label>
-                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Enter your email">
-            </div>
-            <div class="col-span-2">
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Your Phone *</label>
-                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Enter your phone number">
-            </div>
-            <div class="col-span-2">
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
-                <textarea id="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" placeholder="Write your message here..."></textarea>
-            </div>
-        </div>
-        <div class="flex justify-end">
-            <button class="bg-red-500 text-white px-12 py-4 rounded-md font-medium hover:bg-red-600 transition duration-300">
-                Send Message
-            </button>
-        </div>
-    </div>
-</main>
 
-<footer class="bg-black text-white py-16">
-    <div class="container mx-auto px-4 grid grid-cols-4 gap-16">
-        <div>
-            <h3 class="text-2xl font-bold mb-6">Exclusive</h3>
-            <p class="text-white text-base font-medium mb-6">Subscribe</p>
-            <p class="text-white text-sm mb-6">Get 10% off your first order</p>
-            <div class="flex items-center bg-transparent border border-white rounded-md px-4 py-3">
-                <input type="text" placeholder="Enter your email" class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-40">
-                <svg class="w-6 h-6 text-white cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12L3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C10.714 3 9.51824 3.32593 8.5 3.875"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3L12 12L15 9"></path></svg>
-            </div>
-        </div>
-        <div>
-            <h3 class="text-xl font-medium mb-6">Support</h3>
-            <ul class="space-y-4">
-                <li>
-                    <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
-                </li>
-                <li>exclusive@gmail.com</li>
-                <li>+88015-88888-9999</li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-xl font-medium mb-6">Account</h3>
-            <ul class="space-y-4">
-                <li>My Account</li>
-                <li>Login / Register</li>
-                <li>Cart</li>
-                <li>Wishlist</li>
-                <li>Shop</li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-xl font-medium mb-6">Quick Link</h3>
-            <ul class="space-y-4">
-                <li>Privacy Policy</li>
-                <li>Terms Of Use</li>
-                <li>FAQ</li>
-                <li>Contact</li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-xl font-medium mb-6">Download App</h3>
-            <p class="text-xs font-medium mb-2">Save $3 with App New User Only</p>
-            <div class="flex items-center gap-2">
-                <img src="https://placehold.co/80x80?text=QR+Code" alt="QR Code" class="rounded-md">
-                <div class="flex flex-col gap-2">
-                    <img src="https://placehold.co/110x40?text=GooglePlay" alt="Google Play" class="rounded-md">
-                    <img src="https://placehold.co/110x40?text=AppStore" alt="App Store" class="rounded-md">
+            <div class="mt-20 flex gap-[30px] w-full justify-between flex-wrap lg:flex-nowrap">
+                <!-- Left Card: Contact Info -->
+                <div class="bg-white rounded-md shadow-lg p-9 flex flex-col gap-8 w-full lg:max-w-[340px] flex-shrink-0">
+                    <!-- Call To Us -->
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#db4444] flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 14.2857V17C17 17.1591 16.9407 17.3117 16.8322 17.4202C16.7237 17.5287 16.5711 17.588 16.4118 17.588C15.2255 17.588 14.1166 17.228 13.1415 16.5516L11.5714 15.4286C11.4509 15.3456 11.3259 15.2536 11.1989 15.1537C11.0857 15.0642 10.969 14.9806 10.8491 14.9038C10.7292 14.827 10.6062 14.7571 10.4807 14.6946C10.3553 14.6321 10.2274 14.5772 10.0975 14.5303C9.96756 14.4834 9.83584 14.4447 9.70271 14.4146C9.56958 14.3845 9.43542 14.363 9.30055 14.3506C9.16568 14.3381 9.03055 14.3347 8.89539 14.3404C8.75975 14.3461 8.6241 14.3607 8.48911 14.3842C8.35412 14.4077 8.21952 14.4402 8.08576 14.4818C7.95201 14.5233 7.81938 14.5739 7.68817 14.6335C7.55696 14.6931 7.42732 14.7618 7.29952 14.8394C7.17172 14.9171 7.04603 15.0038 6.92298 15.0991C6.80004 15.1942 6.67899 15.2982 6.55986 15.4116L4.99281 16.5447C4.01774 17.2211 2.90884 17.5811 1.72252 17.5811C1.5711 17.5811 1.41843 17.5218 1.30026 17.4107C1.18209 17.2996 1.12513 17.1472 1.12513 16.9944V14.2857C1.12513 13.7857 1.32048 13.305 1.66698 12.9585L3.8996 10.7259C4.2461 10.3794 4.72683 10.184 5.22683 10.184H7.93582C8.16317 10.184 8.38885 10.2371 8.5997 10.3392L10.0039 10.9765L11.4081 10.3392C11.6189 10.2371 11.8446 10.184 12.072 10.184H14.781C15.281 10.184 15.7617 10.3794 16.1082 10.7259L18.3408 12.9585C18.6873 13.305 18.8827 13.7857 18.8827 14.2857Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-medium leading-[24px]">Call To Us</h3>
+                        </div>
+                        <div class="flex flex-col gap-4 text-sm font-normal leading-[21px]">
+                            <p>We are available 24/7, 7 days a week.</p>
+                            <p>Phone: +8801611112222</p>
+                        </div>
+                    </div>
+                    <hr class="border-gray-300">
+                    <!-- Write To Us -->
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#db4444] flex items-center justify-center">
+                                <svg class="w-5 h-4" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5H19V12.5C19 13.0304 18.7893 13.5391 18.4142 13.9142C18.0391 14.2893 17.5304 14.5 17 14.5H3C2.46957 14.5 1.96086 14.2893 1.58579 13.9142C1.21071 13.5391 1 13.0304 1 12.5V1.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19 1.5L10 8L1 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-medium leading-[24px]">Write To US</h3>
+                        </div>
+                        <div class="flex flex-col gap-4 text-sm font-normal leading-[21px]">
+                            <p>Fill out our form and we will contact you within 24 hours.</p>
+                            <p>Emails: customer@exclusive.com</p>
+                            <p>Emails: support@exclusive.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card: Contact Form -->
+                <div class="bg-white rounded-md shadow-lg p-10 flex flex-col gap-8 w-full lg:max-w-[800px]">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="text" placeholder="Your Name *" class="flex-1 bg-gray-100 rounded-md p-3 text-base leading-[24px] outline-none h-[50px]">
+                        <input type="email" placeholder="Your Email *" class="flex-1 bg-gray-100 rounded-md p-3 text-base leading-[24px] outline-none h-[50px]">
+                        <input type="tel" placeholder="Your Phone *" class="flex-1 bg-gray-100 rounded-md p-3 text-base leading-[24px] outline-none h-[50px]">
+                    </div>
+                    <textarea placeholder="Your Message" rows="8" class="bg-gray-100 rounded-md p-3 text-base leading-[24px] outline-none resize-none h-[207px]"></textarea>
+                    <div class="flex justify-end">
+                        <button class="bg-[#db4444] text-white px-12 py-4 rounded-md text-base font-medium leading-[24px] hover:bg-red-700">Send Message</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container mx-auto px-4 mt-16 flex justify-center">
-        <div class="flex items-center space-x-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h1v13.13L12 12l-7 3.13V2h12z"></path></svg>
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.5V21a1 1 0 001 1h16a1 1 0 001-1v-7.5a1.5 1.5 0 00-1.5-1.5h-13a1.5 1.5 0 00-1.5 1.5z"></path></svg>
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75a8.25 8.25 0 11-16.5 0 8.25 8.25 0 0116.5 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 7.5h.75v.75H6v-.75zM6 10.5h.75v.75H6v-.75zM6 13.5h.75v.75H6v-.75z"></path></svg>
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H10.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h3a1.5 1.5 0 001.5-1.5V7.5a1.5 1.5 0 00-1.5-1.5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 3v1.5h3V3"></path></svg>
-        </div>
-    </div>
-    <div class="container mx-auto px-4 mt-12 text-center text-gray-500">
-        <p>Copyright Rimel 2022. All right reserved</p>
-    </div>
-</footer>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white pt-20 pb-6 mt-auto">
+            <div class="max-w-6xl mx-auto px-4 flex justify-between gap-x-12 gap-y-10 flex-wrap">
+                <!-- Exclusive -->
+                <div class="flex flex-col gap-4 w-full sm:w-auto min-w-[180px]">
+                    <h2 class="text-2xl font-bold leading-[24px]">Exclusive</h2>
+                    <h3 class="text-xl font-medium leading-[28px] mt-2">Subscribe</h3>
+                    <p class="text-base font-normal leading-[24px]">Get 10% off your first order</p>
+                    <div class="relative border border-white rounded-md p-3 flex items-center justify-between mt-4">
+                        <input type="email" placeholder="Enter your email" class="bg-transparent outline-none text-base leading-[24px] w-full">
+                        <button class="flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 3L3 10.5V11.5L9 14.5L14.5 20.5L15.5 21L22.5 3H21Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="flex flex-col gap-6 w-full sm:w-auto min-w-[170px]">
+                    <h3 class="text-xl font-medium leading-[28px]">Support</h3>
+                    <ul class="flex flex-col gap-4 text-base font-normal leading-[24px]">
+                        <li>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</li>
+                        <li>exclusive@gmail.com</li>
+                        <li>+88015-88888-9999</li>
+                    </ul>
+                </div>
+
+                <!-- Account -->
+                <div class="flex flex-col gap-6 w-full sm:w-auto min-w-[120px]">
+                    <h3 class="text-xl font-medium leading-[28px]">Account</h3>
+                    <ul class="flex flex-col gap-4 text-base font-normal leading-[24px]">
+                        <li><a href="#" class="hover:underline">My Account</a></li>
+                        <li><a href="#" class="hover:underline">Login / Register</a></li>
+                        <li><a href="#" class="hover:underline">Cart</a></li>
+                        <li><a href="#" class="hover:underline">Wishlist</a></li>
+                        <li><a href="#" class="hover:underline">Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Link -->
+                <div class="flex flex-col gap-6 w-full sm:w-auto min-w-[100px]">
+                    <h3 class="text-xl font-medium leading-[28px]">Quick Link</h3>
+                    <ul class="flex flex-col gap-4 text-base font-normal leading-[24px]">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms Of Use</a></li>
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div class="flex flex-col gap-6 w-full sm:w-auto min-w-[190px]">
+                    <h3 class="text-xl font-medium leading-[28px]">Download App</h3>
+                    <p class="text-xs font-medium leading-[18px]">Save $3 with App New User Only</p>
+                    <div class="flex gap-2 items-center">
+                        <div class="w-20 h-20 bg-black flex items-center justify-center border-2 border-white">
+                            <img src="https://placehold.co/76x76?text=QR" alt="QR Code" class="w-[76px] h-[76px]">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <a href="#" class="w-[110px] h-10">
+                                <img src="https://placehold.co/110x40?text=GooglePlay" alt="Google Play" class="w-full h-full object-cover rounded-sm border border-gray-400">
+                            </a>
+                            <a href="#" class="w-[110px] h-10">
+                                <img src="https://placehold.co/110x40?text=AppStore" alt="App Store" class="w-full h-full object-cover rounded-sm border border-gray-400">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 mt-2">
+                        <a href="#"><img src="https://placehold.co/24x24?text=FB" alt="Facebook" class="w-6 h-6"></a>
+                        <a href="#"><img src="https://placehold.co/24x24?text=TW" alt="Twitter" class="w-6 h-6"></a>
+                        <a href="#"><img src="https://placehold.co/24x24?text=IG" alt="Instagram" class="w-6 h-6"></a>
+                        <a href="#"><img src="https://placehold.co/24x24?text=LI" alt="LinkedIn" class="w-6 h-6"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-20 pt-4 flex justify-center items-center gap-1 w-full">
+                <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-400 text-base font-normal leading-[24px]">Copyright Rimel 2022. All right reserved</span>
+            </div>
+        </footer>
+
+    </section>
 
 </body>
 </html>
