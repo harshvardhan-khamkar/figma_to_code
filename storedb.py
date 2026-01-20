@@ -14,7 +14,7 @@ collection.create_index(
 )
 
 
-def save_figma_file(figma_url: str, figma_json: dict, layout: dict, framework: str):
+def save_figma_json(figma_url: str, figma_json: dict, framework: str):
     collection.update_one(
         {"figma_url": figma_url, "framework": framework},
         {
@@ -22,11 +22,22 @@ def save_figma_file(figma_url: str, figma_json: dict, layout: dict, framework: s
                 "figma_url": figma_url,
                 "framework": framework,
                 "figma_json": figma_json,
-                "parsed_layout": layout,
                 "updated_at": datetime.utcnow()
             }
         },
         upsert=True
+    )
+
+
+def update_parsed_layout(figma_url: str, framework: str, layout: dict):
+    collection.update_one(
+        {"figma_url": figma_url, "framework": framework},
+        {
+            "$set": {
+                "parsed_layout": layout,
+                "parsed_at": datetime.utcnow()
+            }
+        }
     )
 
 

@@ -1,16 +1,117 @@
-def color_to_hex(c):
-    if not c:
-        return None
-    return "#{:02x}{:02x}{:02x}".format(
-        int(c["r"] * 255),
-        int(c["g"] * 255),
-        int(c["b"] * 255)
-    )
+# ===============================
+# COLOR
+# ===============================
 
+def color_to_hex(c):
+    if not c or not isinstance(c, dict):
+        return None
+    try:
+        return "#{:02x}{:02x}{:02x}".format(
+            int(c.get("r", 0) * 255),
+            int(c.get("g", 0) * 255),
+            int(c.get("b", 0) * 255)
+        )
+    except:
+        return None
+
+
+# ===============================
+# FILLS (backgrounds, images)
+# ===============================
+
+def parse_fills(fills):
+    if not fills or not isinstance(fills, list):
+        return {}
+
+    for f in fills:
+        if not f or f.get("visible") is False:
+            continue
+
+        if f.get("type") == "SOLID":
+            return {
+                "bg": color_to_hex(f.get("color")),
+                "opacity": f.get("opacity", 1)
+            }
+
+        if f.get("type") in ["IMAGE", "VIDEO"]:
+            return {"image": True}
+
+    return {}
+
+
+# ===============================
+# STROKES (borders)
+# ===============================
+
+def parse_strokes(node):
+    strokes = node.get("strokes") or []
+    if not strokes or not isinstance(strokes, list):
+        return None
+
+    s = strokes[0]
+    if not isinstance(s, dict):
+        return None
+
+    return {
+        "color": color_to_hex(s.get("color")),
+        "width": node.get("strokeWeight", 0),
+        "align": node.get("strokeAlign")
+    }
+
+
+# ===============================
+# EFFECTS (shadow, blur)
+# ===============================
+
+def parse_effects(effects):
+    if not effects or not isinstance(effects, list):
+        return None
+
+    out = {}
+
+    for e in effects:
+        if not e or e.get("visible") is False:
+            continue
+
+        if e.get("type") == "DROP_SHADOW":
+            out["shadow"] = {
+                "x": e.get("offset", {}).get("x", 0),
+                "y": e.get("offset", {}).get("y", 0),
+                "blur": e.get("radius", 0),
+                "color": color_to_hex(e.get("color"))
+            }
+
+        if e.get("type") == "LAYER_BLUR":
+            out["blur"] = e.get("radius")
+
+    return out or None
+
+
+# ===============================
+# CONSTRAINTS & AUTO-LAYOUT
+# ===============================
+
+def parse_constraints(node):
+    c = node.get("constraints") or {}
+    return {
+        "h": c.get("horizontal"),
+        "v": c.get("vertical"),
+        "grow": node.get("layoutGrow", 0),
+        "align": node.get("layoutAlign"),
+        "hugX": node.get("layoutSizingHorizontal"),
+        "hugY": node.get("layoutSizingVertical")
+    }
+
+
+# ===============================
+# NODE EXTRACTION
+# ===============================
 
 def extract_node(node, parent_x=0, parent_y=0):
-    bb = node.get("absoluteBoundingBox") or {}
+    if not node or not isinstance(node, dict):
+        return None
 
+    bb = node.get("absoluteBoundingBox") or {}
     abs_x = bb.get("x", 0)
     abs_y = bb.get("y", 0)
 
@@ -28,80 +129,95 @@ def extract_node(node, parent_x=0, parent_y=0):
         },
         "layout": {},
         "style": {},
+        "constraints": parse_constraints(node),
         "text": None,
         "children": []
     }
 
-    # Layout
+    # ===============================
+    # SMART AUTO-LAYOUT INFERENCE
+    # ===============================
+
     if node.get("layoutMode"):
         out["layout"] = {
             "dir": node.get("layoutMode"),
-            "gap": node.get("itemSpacing"),
+            "gap": node.get("itemSpacing", 0),
             "padding": {
-                "t": node.get("paddingTop"),
-                "b": node.get("paddingBottom"),
-                "l": node.get("paddingLeft"),
-                "r": node.get("paddingRight")
+                "t": node.get("paddingTop", 0),
+                "b": node.get("paddingBottom", 0),
+                "l": node.get("paddingLeft", 0),
+                "r": node.get("paddingRight", 0)
             },
             "align": node.get("primaryAxisAlignItems"),
-            "cross": node.get("counterAxisAlignItems")
+            "cross": node.get("counterAxisAlignItems"),
+            "wrap": node.get("layoutWrap")
         }
 
-    # Background
-    for f in node.get("fills", []):
-        if f.get("type") == "SOLID":
-            out["style"]["bg"] = color_to_hex(f.get("color"))
-            out["style"]["opacity"] = f.get("opacity", 1)
+    # Fills
+    out["style"].update(parse_fills(node.get("fills")))
 
-    # Border
-    if node.get("strokes"):
-        s = node["strokes"][0]
-        out["style"]["border"] = {
-            "color": color_to_hex(s.get("color")),
-            "width": node.get("strokeWeight")
-        }
+    # Borders
+    border = parse_strokes(node)
+    if border and border.get("width", 0) > 0:
+        name = (node.get("name") or "").lower()
+        node_type = node.get("type")
+        if any(k in name for k in ["button", "btn", "input", "field", "chip", "badge", "pill", "card"]) or node_type == "LINE":
+            out["style"]["border"] = border
 
     # Radius
     if node.get("cornerRadius") is not None:
         out["style"]["radius"] = node.get("cornerRadius")
 
-    # Shadow
-    for e in node.get("effects", []):
-        if e.get("type") == "DROP_SHADOW":
-            out["style"]["shadow"] = True
+    # Effects
+    effects = parse_effects(node.get("effects"))
+    if effects:
+        out["style"]["effects"] = effects
 
     # Text
     if node.get("type") == "TEXT":
-        s = node.get("style", {})
+        s = node.get("style") or {}
+        fills = node.get("fills") or []
+
         out["text"] = node.get("characters")
         out["style"].update({
             "size": s.get("fontSize"),
             "weight": s.get("fontWeight"),
+            "family": s.get("fontFamily"),
             "align": s.get("textAlignHorizontal"),
             "line": s.get("lineHeightPx"),
-            "color": color_to_hex(node.get("fills", [{}])[0].get("color"))
+            "letterSpacing": s.get("letterSpacing"),
+            "color": color_to_hex(fills[0].get("color")) if fills else None
         })
 
     # Children
-    for child in node.get("children", []):
-        out["children"].append(
-            extract_node(child, abs_x, abs_y)
-        )
+    for child in node.get("children") or []:
+        c = extract_node(child, abs_x, abs_y)
+        if c:
+            out["children"].append(c)
 
     return out
 
 
+# ===============================
+# DOCUMENT PARSER
+# ===============================
+
 def parse_figma_layout(figma_json):
     pages = []
 
-    for page in figma_json["document"]["children"]:
+    document = figma_json.get("document") or {}
+
+    for page in document.get("children") or []:
+        if not page:
+            continue
+
         screens = []
 
-        for screen in page.get("children", []):
-            if screen.get("type") != "FRAME":
+        for screen in page.get("children") or []:
+            if not screen or screen.get("type") != "FRAME":
                 continue
 
-            bb = screen.get("absoluteBoundingBox", {})
+            bb = screen.get("absoluteBoundingBox") or {}
             root_x = bb.get("x", 0)
             root_y = bb.get("y", 0)
 
@@ -115,7 +231,8 @@ def parse_figma_layout(figma_json):
                 },
                 "tree": [
                     extract_node(child, root_x, root_y)
-                    for child in screen.get("children", [])
+                    for child in (screen.get("children") or [])
+                    if child
                 ]
             })
 

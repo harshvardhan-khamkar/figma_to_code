@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-import time
+
 from models import ConvertRequest
 from Services.figma_service import get_figma_file
 from Services.layout_parser import parse_figma_layout
@@ -38,6 +38,7 @@ def convert_design(req: ConvertRequest):
 
         cached = get_cached_figma(figma_url, framework)
 
+        # 1️⃣ Get figma JSON (NO re-fetch if cached)
         if cached and cached.get("figma_json"):
             figma_json = cached["figma_json"]
             print("[CACHE] Using stored Figma JSON")
@@ -46,11 +47,11 @@ def convert_design(req: ConvertRequest):
             figma_json = get_figma_file(figma_url)
             save_figma_json(figma_url, figma_json, framework)
 
+        # 2️⃣ ALWAYS re-parse layout
         layout = parse_figma_layout(figma_json)
-        print("[LAYOUT] Parsed Figma layout")
-        update_parsed_layout(figma_url, framework, layout) 
-        print("[LAYOUT] Updated parsed layout in DB")
+        update_parsed_layout(figma_url, framework, layout)
 
+        # 3️⃣ Generate site
         out_dir = "generated_site"
         if os.path.exists(out_dir):
             shutil.rmtree(out_dir)
@@ -60,7 +61,6 @@ def convert_design(req: ConvertRequest):
         if not pages:
             raise Exception("No pages found in layout")
 
-        #  THROTTLED MULTI-SCREEN BUILD
         for page in pages:
             for screen in page["screens"]:
                 screen_name = screen["screen"].lower().replace(" ", "_")
@@ -73,8 +73,6 @@ def convert_design(req: ConvertRequest):
                     "tree": screen["tree"]
                 }
 
-                time.sleep(5)  #  THROTTLE
-
                 code = generate_code(screen_layout, framework)
                 if not code:
                     raise Exception(f"AI returned empty for {screen_name}")
@@ -84,7 +82,7 @@ def convert_design(req: ConvertRequest):
 
                 print(f"[OK] Generated {filename}")
 
-        # Zip
+        # 4️⃣ Zip
         zip_path = "figma_site.zip"
         if os.path.exists(zip_path):
             os.remove(zip_path)
@@ -98,6 +96,7 @@ def convert_design(req: ConvertRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/download")
 def download_zip():
     return FileResponse(
@@ -105,3 +104,53 @@ def download_zip():
         media_type="application/zip",
         filename="figma_site.zip"
     )
+"""
+YOU MUST OUTPUT ONLY RAW HTML.
+DO NOT WRITE MARKDOWN.
+DO NOT WRITE PYTHON.
+DO NOT WRITE EXPLANATIONS.
+DO NOT USE CODE FENCES.
+
+You are a senior frontend engineer building a production website from a Figma scene graph.
+
+Your job is to reconstruct the same UI but improve it for real-world web usage.
+
+RULES:
+
+1. Preserve structure and hierarchy exactly.
+2. Preserve visual intent (layout, spacing, grouping, typography).
+3. Replace absolute positioning with natural document flow whenever possible.
+4. Only use absolute positioning for small decorative or overlay elements.
+5. Convert inline styles into Tailwind utility classes.
+6. Use responsive classes (w-full, max-w-7xl, mx-auto, px-6, grid, flex).
+7. Use semantic tags: header, nav, main, section, footer, article, button.
+8. Optimize for desktop, tablet, and mobile.
+9. Keep code clean and readable.
+
+Preserve decorative and visual storytelling elements exactly.
+Use absolute positioning only for decorative overlays such as:
+- Step numbers
+- Background shapes
+- Floating badges
+
+All functional layout should remain responsive.
+
+
+IMAGE STRATEGY
+
+If the design does not contain real image assets:
+
+- Use high-quality relevant stock images instead of gray placeholders.
+- Choose images that match the section context:
+- Finance services → business / accounting imagery
+- Onboarding steps → office, planning, documents, teamwork visuals
+- Use real URLs from https://images.unsplash.com or https://source.unsplash.com
+- Preserve aspect ratio and placement exactly as in Figma.
+- Never use gray boxes or “Image” placeholders unless explicitly required.
+
+OUTPUT:
+ONE COMPLETE HTML DOCUMENT using Tailwind only.
+
+INPUT:
+{layout}
+"""
